@@ -12,7 +12,6 @@ let Nav = (() => {
 
     function init(){
 
-
         elem = document.createElement('div');
         elem.id = 'nav-bar';
 
@@ -33,7 +32,6 @@ let Nav = (() => {
         when.type = 'date';
         when.id = 'when';
 
-        //console.log(new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo'))
         priority = new DOMParser().parseFromString(priority_selector, "text/html").getElementById('priority');
 
         form.appendChild(what);
@@ -43,6 +41,7 @@ let Nav = (() => {
 
         form.addEventListener('submit', function (e){
             addTodo();
+            e.preventDefault();
         });
 
         elem.appendChild(form);
@@ -54,9 +53,13 @@ let Nav = (() => {
     }
 
     function addTodo(){
-        todo.getElem().appendChild(new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo'));
+        let temp = new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo_0');
 
-        localStorage.setItem("todo", todo.getElem());
+        temp.id = "todo_"+Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+        console.log(temp);
+        todo.getElem().appendChild(temp);
+
+        localStorage.setItem("todo", todo.getElem().outerHTML);
         console.log(localStorage.getItem("todo"));
 
     }

@@ -15,7 +15,10 @@ function container() {
 
     container.appendChild(navbar.getElem());
 
-    todo.getElem().appendChild(new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo'));
+    console.log("here " + todo.getElem());
+
+
+    todo.getElem().appendChild(new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo_0'));
     container.appendChild(todo.getElem());
 
     return container;
