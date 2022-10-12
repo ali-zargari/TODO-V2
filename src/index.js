@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import navbar from './nav.js';
-import todo from './schedule.js';
+import schedule from './schedule.js';
 import todo_elem from './todo.html';
 import './style.scss';
 
@@ -11,15 +11,15 @@ function container() {
 
 
     navbar.init();
-    todo.init();
+    schedule.init();
 
     container.appendChild(navbar.getElem());
 
-    console.log("here " + todo.getElem());
+    //console.log("here " + todo.getElem());
 
 
-    todo.getElem().appendChild(new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo_0'));
-    container.appendChild(todo.getElem());
+    //todo.getElem().appendChild();//new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo_0'));
+    container.appendChild(schedule.getElem());
 
     return container;
 }

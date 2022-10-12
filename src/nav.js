@@ -1,5 +1,5 @@
 import priority_selector from './priority.html';
-import todo from './schedule.js';
+import schedule from './schedule.js';
 
 import todo_elem from "./todo.html";
 import {delay} from "lodash";
@@ -57,9 +57,9 @@ let Nav = (() => {
 
         temp.id = "todo_"+Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
         console.log(temp);
-        todo.getElem().appendChild(temp);
+        schedule.getElem().appendChild(temp);
 
-        localStorage.setItem("todo", todo.getElem().outerHTML);
+        localStorage.setItem("todo", schedule.getElem().outerHTML);
         console.log(localStorage.getItem("todo"));
 
     }

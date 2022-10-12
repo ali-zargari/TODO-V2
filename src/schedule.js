@@ -1,5 +1,6 @@
 import {max} from "lodash";
 import todo_elem from "./todo.html";
+import priority_selector from "./priority.html";
 
 let Schedule = (() =>{
     let elem = '';
@@ -9,14 +10,16 @@ let Schedule = (() =>{
     }
 
     function init(){
-        //elem = localStorage.getItem("todo");
+        let schedule = localStorage.getItem("todo");
+        console.log(new DOMParser().parseFromString(schedule, "text/html").getElementById('schedule'));
+
         //if(elem.id === null){
-        elem = document.createElement('div');
+        elem = new DOMParser().parseFromString(schedule, "text/html").getElementById('schedule');
         // }
         //console.log(elem.childNodes);
-        elem.id = 'schedule'+Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+        elem.id = 'schedule';
 
-
+        //console.log(new DOMParser().parseFromString(schedule, "text/html").getElementById('schedule'));
 
     }
 
