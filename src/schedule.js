@@ -1,7 +1,3 @@
-import {max} from "lodash";
-import todo_elem from "./todo.html";
-import priority_selector from "./priority.html";
-
 let Schedule = (() =>{
     let elem = '';
 
@@ -10,16 +6,15 @@ let Schedule = (() =>{
     }
 
     function init(){
+
         let schedule = localStorage.getItem("todo");
-        console.log(new DOMParser().parseFromString(schedule, "text/html").getElementById('schedule'));
-
-        //if(elem.id === null){
         elem = new DOMParser().parseFromString(schedule, "text/html").getElementById('schedule');
-        // }
-        //console.log(elem.childNodes);
-        elem.id = 'schedule';
 
-        //console.log(new DOMParser().parseFromString(schedule, "text/html").getElementById('schedule'));
+        if(elem == null){
+            elem = document.createElement('div');
+
+        }
+        elem.id = 'schedule';
 
     }
 

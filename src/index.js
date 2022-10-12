@@ -1,7 +1,5 @@
-import _ from 'lodash';
 import navbar from './nav.js';
 import schedule from './schedule.js';
-import todo_elem from './todo.html';
 import './style.scss';
 
 function container() {
@@ -14,14 +12,25 @@ function container() {
     schedule.init();
 
     container.appendChild(navbar.getElem());
-
-    //console.log("here " + todo.getElem());
-
-
-    //todo.getElem().appendChild();//new DOMParser().parseFromString(todo_elem, "text/html").getElementById('todo_0'));
     container.appendChild(schedule.getElem());
 
+
+    let clear = document.createElement('input');
+
+    clear.type = "submit";
+    clear.id = 'clr';
+    clear.value = "clear\nlist";
+    clear.addEventListener('click', clearList);
+
+    container.appendChild(clear);
+
     return container;
+}
+
+function clearList(){
+    console.log("here");
+    localStorage.clear();
+    window.location.reload();
 }
 
 document.body.appendChild(container());

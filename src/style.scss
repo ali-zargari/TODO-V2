@@ -7,6 +7,16 @@
   height: 100vh;
   display: flex;
 
+  #clr{
+
+    position: fixed;
+    right: 5%;
+    top: 5vh;
+
+
+  }
+
+
   #nav-bar{
     flex: 0.2;
     display: flex;
@@ -17,13 +27,49 @@
       display: flex;
       flex-direction: column;
       background-color: aqua;
+      //gap: 1%;
 
       #priority{
         flex: 1;
+        border-radius: 37px;
+        margin: 10px 0 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #p_heading{
+          flex: 1;
+          display: flex;
+          justify-content: center; /* align horizontal */
+          align-items: center; /* align vertical */
+          p{
+            flex: 1;
+            font-weight: bolder;
+            font-size: 220%;
+          }
+        }
+
+        #p_list{
+          flex: 1;
+          display: flex;
+          gap: 3%;
+          align-items: center;
+
+          .p{
+            flex: 1;
+            height: 50px;
+            width: 50px;
+          }
+        }
+
+
       }
 
       input{
         flex: 1;
+        border-radius: 37px;
+        margin: 10px 0 10px 0;
+
       }
     }
   }
@@ -32,8 +78,9 @@
     flex: 0.8;
     display: flex;
     flex-direction: column;
-
     overflow: scroll;
+
+
   }
 }
 

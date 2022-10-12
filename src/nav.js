@@ -1,9 +1,6 @@
 import priority_selector from './priority.html';
 import schedule from './schedule.js';
-
 import todo_elem from "./todo.html";
-import {delay} from "lodash";
-
 
 let Nav = (() => {
     let elem = '';
